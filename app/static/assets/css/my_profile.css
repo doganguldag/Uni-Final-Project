@@ -1,0 +1,25 @@
+.row {
+    display: flex; /* Blog kutularını yan yana sıralamak için */
+    flex-wrap: wrap; /* Eğer alan yetmiyorsa alt satıra geçsin */
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile {
+    flex: 0 0 16.666667%; /* col-lg-2 */
+    max-width: 16.666667%; /* col-lg-2 */
+}
+
+.col-lg-10 { 
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.author-my-photo {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}

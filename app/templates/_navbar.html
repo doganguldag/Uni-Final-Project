@@ -1,0 +1,25 @@
+<!-- #navbar.html -->
+<header class="main-header">
+    <h1 class="site-name">MarBlogs</h1>
+    <hr />
+    <nav class="nav main-nav">
+        <ul>
+            <li><a href="{{ url_for('main') }}">Ana Sayfa</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('my_profile') }}">Profilim</a></li>
+                <li><a href="{{ url_for('submit_blog') }}">Blog Yaz</a></li>
+                
+                {% if current_user.is_admin %}
+                    <li><a href="{{ url_for('admin.index') }}">AdminPanel</a></li>
+                {% endif %}
+
+                <li><a href="{{ url_for('auth.logout') }}">Çıkış Yap</a></li>
+
+                {% else %}
+                <li><a href="{{ url_for('auth.login') }}">Giriş Yap</a></li>
+                <li><a href="{{ url_for('auth.register') }}">Kayıt Ol</a></li>
+                
+        {% endif %}
+        </ul>
+    </nav>
+</header>

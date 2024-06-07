@@ -1,0 +1,49 @@
+<!-- register.html -->
+{% extends 'base.html' %} {% block title %} Register {% endblock %} 
+
+{% block content %}
+
+<div class="register-container">
+  <div class="register-wrapper">
+    <form action="{{ url_for('auth.register') }}" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <h1>Register</h1>
+
+      <div class="register-input-box">
+        {{ form.email(class="form-control", placeholder="Email", required=True) }}
+        <i class="bx bx-envelope"></i>
+        {% if form.email.errors %}
+          <div class="invalid-feedback">
+            {{ form.email.errors[0] }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="register-input-box">
+        {{ form.username(class="form-control", placeholder="Username", required=True) }}
+        <i class="bx bxs-user"></i>
+        {% if form.username.errors %}
+          <div class="invalid-feedback">
+            {{ form.username.errors[0] }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="register-input-box">
+        {{ form.password(class="form-control", placeholder="Password", required=True, type="password") }}
+        <i class="bx bxs-lock-alt"></i>
+        {% if form.password.errors %}
+          <div class="invalid-feedback">
+            {{ form.password.errors[0] }}
+          </div>
+        {% endif %}
+      </div>
+      
+      <button type="submit" class="register-btn">Register</button>
+      <div class="register-register-link">
+        <p>Already have an account? <a href="{{ url_for('auth.login') }}">Login</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

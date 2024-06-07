@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+{% block title %} My Profile {% endblock %} 
+{% block content %}
+
+<div class="container" style="display: flex;">
+    <div class="row">
+        <div class="profile">
+            <div class="profile-image">
+                {% if user.photograph %}
+                <img class="author-my-photo mr-2" src="{{ url_for('static', filename='assets/images/user-images/' + user.username + '.jpg') }}" width="200" height="200" alt="Profil Resmi" />
+                
+                <!-- Profil resmi silme butonu -->
+                <form action="{{ url_for('delete_profile_image') }}" method="POST">
+                    <button type="submit">Profil Resmi Sil</button>
+                </form>
+                
+                {% else %}
+                <img src="{{ url_for('static', filename='assets/images/default.jpg') }}" alt="Varsayılan Resim" class="img-fluid">
+
+                <!-- Profil resmi yükleme butonu -->
+                <form action="{{ url_for('upload_profile_image') }}" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="image" />
+                    <button type="submit">Profil Resmi Yükle</button>
+                </form>
+                {% endif %}
+                <p>Kullanıcı Adı: {{ user.username }}</p>
+                <p>E-posta: {{ user.email }}</p>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <div class="col-lg-10">
+                {% for blog in user_blogs %}
+                <div class="blog-box mb-3">
+                    <img class="blog-img w-100" src="{{blog.image_url}}" alt="Blog" />
+                    <div class="cat-date-container">
+                        <div class="cat-date">
+                            <a href="/blog/{{ blog.category }}" class="category">{{blog.category}}</a>
+                            <a href="#" class="publish-date">{{blog.publish_date}}</a>
+                        </div>
+                        <a class="blog-title" href="/blog/{{ blog.id }}">{{blog.title}}</a>
+                        <p class="blog-subtitle">{{blog.subtitle}}</p>
+                    </div>
+                    <div class="author-infos-views">
+                        <div class="author-infos">
+                            <img class="author-photo mr-2" src="{{ user.photograph }}" alt="Author" width="50" height="50" />
+                            <p class="author-name">{{user.username}}</p>
+                        </div>
+                        <div class="views">
+                            <small class="blog-views"><i class="far fa-eye mr-2"></i>{{blog.views}}</small>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('edit_blog', blog_id=blog.id) }}" class="btn btn-secondary mt-2">Yazıyı Düzenle</a>
+                    <form action="{{ url_for('delete_blog', blog_id=blog.id) }}" method="POST" style="display: inline;">
+                        <button type="submit" class="btn btn-danger mt-2">Yazıyı Sil</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,819;1,819&display=swap');
+
+/* @font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("/assets/Fonts/Booter/ -\ Zero\ Zero.woff") format("woff"),
+         url("/assets/Fonts/Booter\ -\ Zero\ Zero.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+} */
+
+html,body {
+    margin: 0;
+    padding: 0;
+    background-color: #DDD0C8;
+}
+
+.nav {
+    display: inline;
+}
+
+.nav ul {
+    margin: 0;
+}
+
+.nav li {
+    display: inline;
+    font-size: large;
+}
+
+.nav a{
+    display: inline-block;
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav{
+    text-align: center;
+    padding: .5em;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255,255,255, .3);
+}
+
+.main-nav li {
+    padding: 0 5%;
+}
+
+.nav a:hover {
+    background-color: rgba(255,255,255, .3);
+}
+
+.main-header {
+    background-color: rgba(0,0,0, .6);
+    background-image: url("/static/assets/images/header-background.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    font-family: Raleway;
+}
+
+.site-name {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 3em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: white;
+    height: 50px;
+}
+
+.container {
+    max-width: 100%;
+    padding: 10px;
+}
+
+.blog-container {
+    margin: 5px;
+    display: flex; /* Blog kutularını yan yana sıralamak için */
+    flex-wrap: wrap; /* Eğer alan yetmiyorsa alt satıra geçsin */
+    width: 100%;
+    box-sizing: border-box;  
+
+}
+
+.blog-box {
+    width: calc(33.33% - 20px); /* Her bir blog kutusunun genişliği */
+    max-width: 350px; /* Maksimum genişlik */
+    margin: 20px 10px ; /* Kenar boşlukları */
+    height: 500px;
+    max-height: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.tit-sub {
+    height: 100px;
+    display: flex;;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.blog-img {
+    max-width: 100%;
+
+    height: 200px;
+    border-radius: 30px 30px 0px 0px;
+    object-fit: cover;
+}
+
+
+.w-100 {
+    width: 100%;
+}
+
+.cat-date-container{
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-top: 0;
+    padding: 1.5rem;
+}
+
+.cat-date {
+    margin-bottom: 0.5rem;
+}
+
+.category {
+    display: inline-block; /* badge */
+    padding: 0.25em 0.4em; /* badge */
+    font-size: 75%; /* badge */
+    font-weight: 700; /* badge */
+    line-height: 1; /* badge */
+    text-align: center; /* badge */
+    white-space: nowrap; /* badge */
+    vertical-align: baseline; /* badge */
+    border-radius: 0.25rem; /* badge */
+    background-color: #007bff; /* badge-primary */
+    color: white; /* badge-primary */
+    text-transform: uppercase; /* text-uppercase */
+    font-weight: 600; /* font-weight-semi-bold (Bootstrap'da bu sınıf yok, bu yüzden varsayılan olarak 600 kabul edebiliriz) */
+    padding: 0.5rem; /* p-2 */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+.publish-date {
+    color: #212529;
+    text-decoration: none;
+}
+
+.blog-title {
+    display: block;
+    margin-bottom: 1rem;
+    color: rgb(70,70,70);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.blog-subtitle {
+    margin: 0;
+}
+
+
+.author-infos-views {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-top: 0;
+    padding: 1.5rem;
+}
+
+.author-infos {
+    display: flex;
+    align-items: center;
+}
+
+.author-photo {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.views {
+    display: flex;
+    align-items: center;
+}
+
+.blog-views {
+    margin-left: 1rem;
+}
+
+/* hr.new1 {
+    border-top: 1px dashed red;
+} */
+
+/* .far: Dışarıdan sağlanan FontAwesome ikonlarının bir sınıfı */
+.far {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400; /* Normal font ağırlığı */
+}
+
+/* .fa-eye, .fa-comment: FontAwesome ikonlarının bir sınıfı */
+.fa-eye,
+.fa-comment {
+    font-size: 1rem; /* FontAwesome ikon boyutu */
+}
+
+.login-row {
+    align-items: center;
+}

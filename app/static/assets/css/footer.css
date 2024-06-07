@@ -1,0 +1,120 @@
+/* FOOTER */
+.footer {
+    background: #303036;
+    color: #d3d3d3;
+    height: 330px;
+    position: relative;
+}
+
+.footer .footer-content .footer-section .contant {
+    margin-bottom: 5px;
+}
+
+.footer .footer-content {
+    height: 330px;
+    display: flex;
+}
+
+.footer .footer-content .footer-section {
+    flex: 1;
+    padding: 25px;
+}
+
+.footer .footer-content h1,
+.footer .footer-content h2 {
+    color: white;
+}
+
+.footer .footer-content .about h1 span {
+    color: #05f7ff;
+}
+
+.footer .footer-content .about .contact span {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.footer .footer-content .about .socials a {
+    color: white;
+    border: 1px solid gray;
+    width: 35px;
+    height: 35px;
+    padding-top: 5px;
+    margin-right: 5px;
+    justify-content: center;  /* Yatay ortalama */
+    align-items: center;   
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 5px;
+}
+
+.footer .footer-content .about .socials a:hover {
+    border: 1px solid white;
+    color: white;
+    transition: all .3s;
+}
+
+.text-input{
+    padding: .7rem 1rem;
+    display: block;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    color: #444;
+    line-height: 1.5rem;
+    font-size: 1.2em;
+}
+
+.footer .footer-content .contact-form .contact-input {
+    background: #ffffff;
+    color: #000000;
+    margin-bottom: 10px;
+    line-height: 1.5rem;
+    padding: .9rem 1.4rem;
+    border: none;
+}
+
+.footer .footer-content .contact-form .contact-input:focus{
+    background: #fffdfdea;
+}
+
+.footer .footer-content .contact-form .contact-btn {
+    float: right;
+}
+
+.footer-btn {
+    padding: .5rem 1rem;
+    background: #006669;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.footer-btn big {
+    padding: .7rem 1.3rem;
+    line-height: 1.3rem;
+}
+
+.footer-btn:hover {
+    color: white !important;
+    background: #005255;
+}
+
+.footer .footer-bottom {
+    display: flex;
+    justify-content: center;  /* Yatay ortalama */
+    align-items: center;      /* Dikey ortalama */
+    background: #343a40;
+    color: white;
+    height: 50px;
+    text-align: center;
+    position: fixed; /* Sayfanın altında sabit konum */
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 999; /* Diğer içeriklerin üzerine çıkması için */
+    font-family: "Poppins", sans-serif;
+}

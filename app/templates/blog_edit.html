@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% block title %} Blog Düzenle {% endblock %} 
+
+{% block content %}
+<div class="write-container">
+    <div class="add">
+        <div class="submit-form">
+            <form method="post" action="{{ url_for('edit_blog', blog_id=blog.id) }}">
+                <div class="content">
+                    <input type="text" name="title" placeholder="Title" value="{{ blog.title }}" required />
+                    <input type="text" name="subtitle" placeholder="Subtitle" value="{{ blog.subtitle }}" required />
+                    <input type="text" name="reading_time" placeholder="Reading Time" value="{{ blog.reading_time }}" required />
+                    <div class="editorContainer">
+                        <textarea name="content" class="editor" placeholder="Write your content here..." required>{{ blog.content }}</textarea>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="item">
+                        <h1>Choose a Category</h1>
+                        {% for category in ["art", "science", "technology", "cinema", "design", "food"] %}
+                            <div class="cat">
+                                <input type="radio" name="category" value="{{ category }}" id="{{ category }}" {% if blog.category == category %}checked{% endif %} required />
+                                <label for="{{ category }}">{{ category.capitalize() }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="item">
+                        <div class="buttons">
+                            <button type="submit" class="btn">Güncelle</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

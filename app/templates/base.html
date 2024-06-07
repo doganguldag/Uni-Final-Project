@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,819;1,819&display=swap" rel="stylesheet">
+    <title>{%block title%} Blog Page {%endblock%}</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/blog-style.css">
+    <link rel="stylesheet" href="/static/assets/css/blog_submit.css">
+    <link rel="stylesheet" href="/static/assets/css/write.css">
+    <link rel="stylesheet" href="/static/assets/css/blog_page.css">
+    <link rel="stylesheet" href="/static/assets/css/my_profile.css">
+    <link rel="stylesheet" href="/static/assets/css/login.css">
+    <link rel="stylesheet" href="/static/assets/css/register.css">
+    <link rel="stylesheet" href="/static/assets/css/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+    <div>
+        {% include "_navbar.html" %}
+    </div>
+    
+    {% block content %}
+    {% endblock %}
+
+    {% include "_footer.html" %}
+
+<script src="/static/assets/js/script.js"></script>
+</body>
+</html>

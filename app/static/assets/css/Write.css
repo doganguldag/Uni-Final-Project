@@ -1,0 +1,132 @@
+.write-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 600px;
+    background-color: seagreen;
+    background: url('/static/assets/images/bg4.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.add {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin: 20px;
+    
+}
+
+.write-container .add .submit-form {
+    padding: 20px;
+    width: 50%;
+}
+    
+.add .content {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add .content input {
+padding: 10px;
+border: 1px solid lightgray;
+border-radius: 10px;
+}
+
+.add .content .editorContainer {
+height: 300px;
+overflow: scroll;
+border: 1px solid lightgray;
+}
+
+.add .content .editor {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+    
+
+
+.add .menu {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add .menu .item {
+    border: 1px solid lightgray;
+    padding: 10px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #555;
+}
+
+.add .menu .item h1{
+    font-size: 20px;
+}
+
+.add .menu .item .file{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.add .menu .item .buttons{
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.add .menu .item .buttons :first-child{
+    cursor: pointer;
+    color: teal;
+    background-color: white;
+    border: 1px solid teal;
+    padding: 3px 5px;
+    width: 70px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.add .menu .item .buttons last-child{
+    cursor: pointer;
+    color: white;
+    background-color: teal;
+    border: 1px solid teal;
+    padding: 3px 5px;
+}
+
+.add .menu .item h1 {
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+.add .menu .item .cat{
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: white;
+    justify-content: center;
+    padding-top: 5px;
+}

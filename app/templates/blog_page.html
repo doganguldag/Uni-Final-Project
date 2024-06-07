@@ -1,0 +1,51 @@
+<!-- blog_page.html -->
+{% extends 'base.html' %} {% block title %} {{ blog.title }} {%endblock%}
+{%block content%}
+
+<style>
+    .bp-container header {
+        background: url("{{ blog.image_url }}") center / cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 400px;
+        padding: 20px 50px 60px;
+        border-radius: 16px;
+    }
+</style>
+
+<main class="bp-index">
+    <div class="bp-container">
+        <header class="bp-header">
+            <div class="bp-category">
+                <div class="bp-info">
+                    <div class="bp-tag">
+                        <i class="fa-solid fa-tag"></i>
+                        <span>{{ blog.category }}</span>
+                    </div>
+                    <h1 class="bp-title">{{ blog.title }}</h1>
+                    <p class="bp-subtitle">{{ blog.subtitle }}</p>
+                </div>
+            </div>
+        </header>
+        <section class="bp-details">
+            <div class="bp-item">
+                <h5 class="bp-item-title">Reading Time</h5>
+                <p class="bp-item-text"><span class="bp-item-data">{{ blog.reading_time }}</span> Mins</p>
+            </div>
+            <div class="bp-item">
+                <h5 class="bp-item-title">Publish Date</h5>
+                <p class="bp-item-text"><span class="bp-item-data">{{ blog.publish_date }}</span></p>
+            </div>
+            <div class="bp-item">
+                <h5 class="bp-item-title">Views</h5>
+                <p class="bp-item-text"><span class="bp-item-data">{{ blog.views }}</span> Views</p>
+            </div>
+        </section>
+        <article>
+            {{ blog.content | safe }}
+        </article>
+    </div>
+</main>
+
+{%endblock%}

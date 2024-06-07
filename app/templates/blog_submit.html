@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block title %} Submit Blog {% endblock %} 
+
+{% block content %}
+    
+<div class="write-container">
+    <div class="add">
+        <div class="submit-form">
+            <form method="post" action="{{ url_for('submit_blog') }}">
+                <div class="content">
+                    <input type="text" name="title" placeholder="Title" required />
+                    <input type="text" name="subtitle" placeholder="Subtitle" required />
+                    <input type="text" name="reading_time" placeholder="Reading Time" required />
+                    <div class="editorContainer">
+                        <textarea name="content" class="editor" placeholder="Write your content here..." required></textarea>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="item">
+                        <h1>Choose a Category</h1>
+                        {% for category in ["art", "science", "technology", "cinema", "design", "food"] %}
+                            <div class="cat">
+                                <input type="radio" name="category" value="{{ category }}" id="{{ category }}" required />
+                                <label for="{{ category }}">{{ category.capitalize() }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="item">
+                        <div class="buttons">
+                            <button type="submit" name="status" value="publish">Publish</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
